@@ -1,386 +1,283 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>GitHub Repository AI Assistant</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <style>
-    /* Custom Scrollbar */
-    ::-webkit-scrollbar {
-      width: 6px;
-      height: 6px;
-    }
-    ::-webkit-scrollbar-track {
-      background: #0f172a;
-    }
-    ::-webkit-scrollbar-thumb {
-      background: #334155;
-      border-radius: 3px;
-    }
-    ::-webkit-scrollbar-thumb:hover {
-      background: #475569;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Allyson Arbelaez | Portfolio & Resume</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#4f46e5',
+                        secondary: '#0f172a',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @media print {
+            .no-print { display: none !important; }
+            body { background: white !important; color: black !important; }
+            .print-card { border: none !important; shadow: none !important; padding: 0 !important; }
+        }
+    </style>
 </head>
-<body class="bg-slate-950 text-slate-100 min-h-screen font-sans flex flex-col">
+<body class="bg-slate-950 text-slate-100 font-sans antialiased min-h-screen flex flex-col justify-between">
 
-  <!-- Header -->
-  <header class="border-b border-slate-800 bg-slate-900/50 backdrop-blur-md sticky top-0 z-50">
-    <div class="max-w-7xl mx-auto px-4 py-3 flex flex-wrap justify-between items-center gap-4">
-      <div class="flex items-center gap-3">
-        <i class="fa-brands fa-github text-3xl text-indigo-400"></i>
-        <div>
-          <h1 class="font-bold text-lg leading-none">RepoAI Explorer</h1>
-          <span class="text-xs text-slate-400">GitHub Intelligence & Documentation Tool</span>
+    <!-- Navigation Header -->
+    <header class="no-print sticky top-0 z-50 bg-slate-900/80 backdrop-blur-md border-b border-slate-800">
+        <div class="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center">
+            <a href="#" class="text-xl font-bold tracking-tight text-white flex items-center gap-2">
+                <span class="w-8 h-8 rounded-lg bg-indigo-600 text-white flex items-center justify-center font-bold text-sm">AA</span>
+                Allyson Arbelaez
+            </a>
+            <nav class="hidden md:flex items-center gap-6 text-sm text-slate-300 font-medium">
+                <a href="#about" class="hover:text-indigo-400 transition">About</a>
+                <a href="#skills" class="hover:text-indigo-400 transition">Skills</a>
+                <a href="#experience" class="hover:text-indigo-400 transition">Experience</a>
+                <a href="#education" class="hover:text-indigo-400 transition">Education</a>
+                <a href="#contact" class="hover:text-indigo-400 transition">Contact</a>
+            </nav>
+            <button onclick="window.print()" class="no-print text-xs bg-indigo-600 hover:bg-indigo-500 text-white font-semibold py-2 px-4 rounded-lg transition flex items-center gap-2 shadow-lg shadow-indigo-600/20">
+                <i class="fa-solid fa-print"></i> Print / Save PDF
+            </button>
         </div>
-      </div>
-      
-      <!-- API Key Modal Trigger / Status -->
-      <div class="flex items-center gap-2">
-        <div id="apiKeyStatus" class="hidden text-xs px-2 py-1 bg-emerald-500/10 text-emerald-400 rounded border border-emerald-500/20 flex items-center gap-1">
-          <i class="fa-solid fa-check"></i> API Key Ready
+    </header>
+
+    <!-- Hero Section -->
+    <section id="about" class="max-w-6xl mx-auto px-4 py-16 md:py-24 w-full">
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
+            <div class="md:col-span-8 space-y-4">
+                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-indigo-500/10 border border-indigo-500/20 text-indigo-400 text-xs font-medium">
+                    <i class="fa-solid fa-globe"></i> Bilingual (English / Spanish)
+                </div>
+                <h1 class="text-4xl md:text-5xl font-extrabold text-white tracking-tight leading-tight">
+                    Hi, I'm <span class="text-indigo-400">Allyson Arbelaez</span>
+                </h1>
+                <p class="text-lg text-slate-400 leading-relaxed max-w-2xl">
+                    Bilingual customer service, administrative support, and operations professional with experience in customer relations, office support, billing assistance, clerical functions, and warehouse operations.
+                </p>
+                
+                <!-- Contact Badges -->
+                <div class="flex flex-wrap gap-3 pt-2 text-sm text-slate-300">
+                    <span class="flex items-center gap-2 bg-slate-900 border border-slate-800 px-3 py-1.5 rounded-lg">
+                        <i class="fa-solid fa-location-dot text-indigo-400"></i> Bordentown, NJ 08505
+                    </span>
+                    <a href="tel:6094966699" class="flex items-center gap-2 bg-slate-900 border border-slate-800 px-3 py-1.5 rounded-lg hover:border-indigo-500 transition">
+                        <i class="fa-solid fa-phone text-indigo-400"></i> (609) 496-6699
+                    </a>
+                    <a href="mailto:arbelaezallyson15@gmail.com" class="flex items-center gap-2 bg-slate-900 border border-slate-800 px-3 py-1.5 rounded-lg hover:border-indigo-500 transition">
+                        <i class="fa-solid fa-envelope text-indigo-400"></i> arbelaezallyson15@gmail.com
+                    </a>
+                    <a href="https://linkedin.com/in/allysonarbelaez" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 bg-slate-900 border border-slate-800 px-3 py-1.5 rounded-lg hover:border-indigo-500 transition">
+                        <i class="fa-brands fa-linkedin text-indigo-400"></i> LinkedIn Profile
+                    </a>
+                </div>
+            </div>
+
+            <!-- Profile Avatar Badge -->
+            <div class="md:col-span-4 flex justify-center">
+                <div class="relative w-48 h-48 rounded-2xl bg-gradient-to-tr from-indigo-600 to-violet-500 p-1 shadow-2xl shadow-indigo-500/20">
+                    <div class="w-full h-full bg-slate-900 rounded-[14px] flex flex-col items-center justify-center text-center p-4">
+                        <div class="w-20 h-20 rounded-full bg-indigo-500/20 text-indigo-400 flex items-center justify-center text-3xl font-bold mb-3">
+                            AA
+                        </div>
+                        <h3 class="font-bold text-white">Allyson Arbelaez</h3>
+                        <p class="text-xs text-slate-400 mt-1">Marketing Major at Rutgers Business School</p>
+                    </div>
+                </div>
+            </div>
         </div>
-        <button id="configBtn" onclick="toggleModal(true)" class="px-3 py-1.5 bg-slate-800 hover:bg-slate-700 text-xs font-medium rounded-lg border border-slate-700 transition flex items-center gap-2">
-          <i class="fa-solid fa-key text-amber-400"></i> Set Gemini API Key
-        </button>
-      </div>
-    </div>
-  </header>
-
-  <!-- Main Container -->
-  <main class="max-w-7xl mx-auto w-full px-4 py-6 flex-1 flex flex-col gap-6">
-
-    <!-- Control Bar / Repo Input -->
-    <section class="bg-slate-900/80 p-4 rounded-xl border border-slate-800 shadow-xl flex flex-col md:flex-row gap-3">
-      <div class="relative flex-1">
-        <i class="fa-solid fa-code-branch absolute left-3 top-1/2 -translate-y-1/2 text-slate-500"></i>
-        <input id="repoInput" type="text" placeholder="e.g., facebook/react or https://github.com/torvalds/linux" 
-               class="w-full bg-slate-950 border border-slate-800 rounded-lg pl-10 pr-4 py-2.5 text-sm text-slate-200 placeholder-slate-500 focus:outline-none focus:border-indigo-500 transition">
-      </div>
-      <button id="fetchBtn" onclick="loadRepository()" class="px-5 py-2.5 bg-indigo-600 hover:bg-indigo-500 text-white font-medium text-sm rounded-lg transition flex items-center justify-center gap-2 shadow-lg shadow-indigo-600/20">
-        <i class="fa-solid fa-download"></i> Load Repository
-      </button>
     </section>
 
-    <!-- Workspace Grid -->
-    <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 flex-1 min-h-[500px]">
-      
-      <!-- Left Panel: Tree & Metadata -->
-      <aside class="lg:col-span-4 bg-slate-900/60 rounded-xl border border-slate-800 flex flex-col overflow-hidden">
-        <div class="p-3 border-b border-slate-800 bg-slate-900 flex justify-between items-center">
-          <span class="text-xs font-semibold uppercase tracking-wider text-slate-400">Repository Structure</span>
-          <span id="fileCount" class="text-xs text-slate-500">0 items</span>
-        </div>
-        
-        <!-- Repo Tree Container -->
-        <div id="treeContainer" class="p-3 overflow-y-auto flex-1 font-mono text-xs text-slate-300 leading-relaxed">
-          <div class="text-center py-12 text-slate-500">
-            <i class="fa-regular fa-folder-open text-3xl mb-2 block"></i>
-            Enter a repository above to load structure.
-          </div>
-        </div>
-
-        <!-- Quick AI Action Buttons -->
-        <div class="p-3 border-t border-slate-800 bg-slate-900/90 grid grid-cols-2 gap-2">
-          <button onclick="quickAction('readme')" class="px-2 py-2 bg-slate-800 hover:bg-slate-700 text-xs text-slate-200 rounded border border-slate-700 transition flex items-center justify-center gap-1.5">
-            <i class="fa-solid fa-file-lines text-indigo-400"></i> Generate README
-          </button>
-          <button onclick="quickAction('explain')" class="px-2 py-2 bg-slate-800 hover:bg-slate-700 text-xs text-slate-200 rounded border border-slate-700 transition flex items-center justify-center gap-1.5">
-            <i class="fa-solid fa-lightbulb text-amber-400"></i> Explain Architecture
-          </button>
-        </div>
-      </aside>
-
-      <!-- Right Panel: AI Interactive Chat -->
-      <section class="lg:col-span-8 bg-slate-900/60 rounded-xl border border-slate-800 flex flex-col overflow-hidden">
-        <div class="p-3 border-b border-slate-800 bg-slate-900 flex justify-between items-center">
-          <span class="text-xs font-semibold uppercase tracking-wider text-slate-400">AI Code Assistant</span>
-          <button onclick="clearChat()" class="text-xs text-slate-500 hover:text-slate-300 transition">
-            <i class="fa-solid fa-trash"></i> Clear Chat
-          </button>
-        </div>
-
-        <!-- Chat History Window -->
-        <div id="chatHistory" class="p-4 overflow-y-auto flex-1 space-y-4">
-          <div class="flex gap-3 bg-slate-900/80 p-3 rounded-lg border border-slate-800 text-sm">
-            <div class="w-7 h-7 rounded-full bg-indigo-600/20 text-indigo-400 flex items-center justify-center flex-shrink-0">
-              <i class="fa-solid fa-robot text-xs"></i>
+    <!-- Core Skills Section -->
+    <section id="skills" class="bg-slate-900/50 border-y border-slate-800 py-16">
+        <div class="max-w-6xl mx-auto px-4">
+            <h2 class="text-2xl font-bold text-white mb-8 flex items-center gap-3">
+                <i class="fa-solid fa-star text-indigo-400"></i> Core Competencies
+            </h2>
+            
+            <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
+                <div class="p-4 bg-slate-900 border border-slate-800 rounded-xl hover:border-indigo-500/50 transition">
+                    <i class="fa-solid fa-headset text-indigo-400 text-xl mb-2"></i>
+                    <h3 class="font-semibold text-slate-200 text-sm">Customer Service & Client Relations</h3>
+                </div>
+                <div class="p-4 bg-slate-900 border border-slate-800 rounded-xl hover:border-indigo-500/50 transition">
+                    <i class="fa-solid fa-file-invoice-dollar text-indigo-400 text-xl mb-2"></i>
+                    <h3 class="font-semibold text-slate-200 text-sm">Billing Support & Invoicing</h3>
+                </div>
+                <div class="p-4 bg-slate-900 border border-slate-800 rounded-xl hover:border-indigo-500/50 transition">
+                    <i class="fa-solid fa-folder-open text-indigo-400 text-xl mb-2"></i>
+                    <h3 class="font-semibold text-slate-200 text-sm">Administrative Support</h3>
+                </div>
+                <div class="p-4 bg-slate-900 border border-slate-800 rounded-xl hover:border-indigo-500/50 transition">
+                    <i class="fa-solid fa-keyboard text-indigo-400 text-xl mb-2"></i>
+                    <h3 class="font-semibold text-slate-200 text-sm">Data Entry & Records</h3>
+                </div>
+                <div class="p-4 bg-slate-900 border border-slate-800 rounded-xl hover:border-indigo-500/50 transition">
+                    <i class="fa-solid fa-cash-register text-indigo-400 text-xl mb-2"></i>
+                    <h3 class="font-semibold text-slate-200 text-sm">POS Systems & Cash Handling</h3>
+                </div>
+                <div class="p-4 bg-slate-900 border border-slate-800 rounded-xl hover:border-indigo-500/50 transition">
+                    <i class="fa-solid fa-boxes-packing text-indigo-400 text-xl mb-2"></i>
+                    <h3 class="font-semibold text-slate-200 text-sm">Warehouse Operations</h3>
+                </div>
+                <div class="p-4 bg-slate-900 border border-slate-800 rounded-xl hover:border-indigo-500/50 transition">
+                    <i class="fa-solid fa-language text-indigo-400 text-xl mb-2"></i>
+                    <h3 class="font-semibold text-slate-200 text-sm">Bilingual (English/Spanish)</h3>
+                </div>
+                <div class="p-4 bg-slate-900 border border-slate-800 rounded-xl hover:border-indigo-500/50 transition">
+                    <i class="fa-solid fa-laptop text-indigo-400 text-xl mb-2"></i>
+                    <h3 class="font-semibold text-slate-200 text-sm">MS Office & Google Workspace</h3>
+                </div>
             </div>
-            <div class="text-slate-300 leading-relaxed">
-              Hello! Load a repository above and set your Gemini API key to start asking questions, summarizing code, or drafting documentation.
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="max-w-6xl mx-auto px-4 py-16">
+        <h2 class="text-2xl font-bold text-white mb-8 flex items-center gap-3">
+            <i class="fa-solid fa-briefcase text-indigo-400"></i> Professional Experience
+        </h2>
+
+        <div class="space-y-8">
+            <!-- Frutta Bowls -->
+            <div class="bg-slate-900/60 border border-slate-800 rounded-2xl p-6 hover:border-slate-700 transition">
+                <div class="flex flex-col md:flex-row md:items-center justify-between gap-2 mb-4">
+                    <div>
+                        <h3 class="text-lg font-bold text-white">Sales Associate / Customer Service Representative</h3>
+                        <p class="text-indigo-400 text-sm font-medium">Frutta Bowls — Robbinsville, NJ</p>
+                    </div>
+                    <span class="text-xs bg-slate-800 border border-slate-700 text-slate-300 px-3 py-1 rounded-full w-fit">
+                        Aug 2022 – Present (Part Time)
+                    </span>
+                </div>
+                <ul class="space-y-2 text-slate-300 text-sm list-disc list-inside leading-relaxed">
+                    <li>Deliver exceptional customer service in a fast-paced environment.</li>
+                    <li>Process transactions accurately and manage cash register operations.</li>
+                    <li>Maintain organized records of customer orders and daily transactions.</li>
+                    <li>Prepare and serve products while ensuring quality standards.</li>
+                    <li>Support daily operations through organization, communication, and team collaboration.</li>
+                    <li>Maintain cleanliness, food safety, and operational efficiency.</li>
+                </ul>
             </div>
-          </div>
+
+            <!-- Delonghi -->
+            <div class="bg-slate-900/60 border border-slate-800 rounded-2xl p-6 hover:border-slate-700 transition">
+                <div class="flex flex-col md:flex-row md:items-center justify-between gap-2 mb-4">
+                    <div>
+                        <h3 class="text-lg font-bold text-white">Warehouse Associate</h3>
+                        <p class="text-indigo-400 text-sm font-medium">Delonghi — Robbinsville, NJ</p>
+                    </div>
+                    <span class="text-xs bg-slate-800 border border-slate-700 text-slate-300 px-3 py-1 rounded-full w-fit">
+                        Summer 2025 (Seasonal)
+                    </span>
+                </div>
+                <ul class="space-y-2 text-slate-300 text-sm list-disc list-inside leading-relaxed">
+                    <li>Assisted with shipping, receiving, packing, and inventory organization.</li>
+                    <li>Supported warehouse workflow efficiency and order accuracy.</li>
+                    <li>Maintained organized stock areas and followed operational procedures.</li>
+                    <li>Collaborated with team members to meet productivity goals in a fast-paced environment.</li>
+                </ul>
+            </div>
+
+            <!-- Staff Management -->
+            <div class="bg-slate-900/60 border border-slate-800 rounded-2xl p-6 hover:border-slate-700 transition">
+                <div class="flex flex-col md:flex-row md:items-center justify-between gap-2 mb-4">
+                    <div>
+                        <h3 class="text-lg font-bold text-white">Office Internship / Clerical Support</h3>
+                        <p class="text-indigo-400 text-sm font-medium">Staff Management — Trenton, NJ</p>
+                    </div>
+                    <span class="text-xs bg-slate-800 border border-slate-700 text-slate-300 px-3 py-1 rounded-full w-fit">
+                        Summer 2024
+                    </span>
+                </div>
+                <ul class="space-y-2 text-slate-300 text-sm list-disc list-inside leading-relaxed">
+                    <li>Drafted, proofread, and organized professional email communications.</li>
+                    <li>Assisted with office administrative tasks and correspondence.</li>
+                    <li>Reviewed documentation for accuracy and consistency.</li>
+                    <li>Coordinated with team members to support communication workflows.</li>
+                    <li>Maintained strong attention to detail and professionalism.</li>
+                </ul>
+            </div>
         </div>
+    </section>
 
-        <!-- Chat Input Form -->
-        <div class="p-3 border-t border-slate-800 bg-slate-900">
-          <form id="chatForm" onsubmit="handleChatSubmit(event)" class="flex gap-2">
-            <input id="chatInput" type="text" placeholder="Ask anything about the codebase..." 
-                   class="flex-1 bg-slate-950 border border-slate-800 rounded-lg px-3 py-2 text-sm text-slate-200 placeholder-slate-500 focus:outline-none focus:border-indigo-500 transition">
-            <button type="submit" id="sendBtn" class="px-4 py-2 bg-indigo-600 hover:bg-indigo-500 text-white rounded-lg text-sm font-medium transition flex items-center justify-center">
-              <i class="fa-solid fa-paper-plane"></i>
-            </button>
-          </form>
+    <!-- Education Section -->
+    <section id="education" class="bg-slate-900/50 border-t border-slate-800 py-16">
+        <div class="max-w-6xl mx-auto px-4">
+            <h2 class="text-2xl font-bold text-white mb-8 flex items-center gap-3">
+                <i class="fa-solid fa-graduation-cap text-indigo-400"></i> Education
+            </h2>
+
+            <div class="bg-slate-900 border border-slate-800 rounded-2xl p-6 flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+                <div class="space-y-1">
+                    <h3 class="text-lg font-bold text-white">Rutgers Business School - Rutgers University</h3>
+                    <p class="text-indigo-400 text-sm">New Brunswick, NJ</p>
+                    <p class="text-slate-300 text-sm">Bachelor of Science in Marketing</p>
+                </div>
+                <div class="text-left md:text-right space-y-1">
+                    <span class="inline-block bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-xs font-semibold px-3 py-1 rounded-full">
+                        GPA: 3.625
+                    </span>
+                    <p class="text-xs text-slate-400">Expected May 2029</p>
+                </div>
+            </div>
         </div>
-      </section>
+    </section>
 
-    </div>
-  </main>
-
-  <!-- Modal for API Key -->
-  <div id="apiModal" class="fixed inset-0 bg-slate-950/80 backdrop-blur-sm z-50 flex items-center justify-center hidden p-4">
-    <div class="bg-slate-900 border border-slate-800 rounded-xl p-6 max-w-md w-full shadow-2xl">
-      <h3 class="text-lg font-bold text-white mb-2 flex items-center gap-2">
-        <i class="fa-solid fa-key text-amber-400"></i> Configure Gemini API Key
-      </h3>
-      <p class="text-xs text-slate-400 mb-4">
-        Your API key is saved locally in your browser's local storage and is never sent to any external backend.
-      </p>
-      <input id="apiKeyInput" type="password" placeholder="AIzaSy..." 
-             class="w-full bg-slate-950 border border-slate-800 rounded-lg p-2.5 text-sm text-slate-200 mb-4 focus:outline-none focus:border-indigo-500">
-      <div class="flex justify-end gap-2">
-        <button onclick="toggleModal(false)" class="px-4 py-2 text-xs font-medium text-slate-400 hover:text-white transition">Cancel</button>
-        <button onclick="saveApiKey()" class="px-4 py-2 bg-indigo-600 hover:bg-indigo-500 text-white text-xs font-medium rounded-lg transition">Save Key</button>
-      </div>
-    </div>
-  </div>
-
-  <!-- JavaScript App Logic -->
-  <script>
-    let repoData = { owner: '', repo: '', tree: [] };
-    let apiKey = localStorage.getItem('gemini_api_key') || '';
-
-    // Initialize state
-    document.addEventListener('DOMContentLoaded', () => {
-      if (apiKey) {
-        document.getElementById('apiKeyInput').value = apiKey;
-        document.getElementById('apiKeyStatus').classList.remove('hidden');
-      }
-    });
-
-    function toggleModal(show) {
-      document.getElementById('apiModal').classList.toggle('hidden', !show);
-    }
-
-    function saveApiKey() {
-      apiKey = document.getElementById('apiKeyInput').value.trim();
-      if (apiKey) {
-        localStorage.setItem('gemini_api_key', apiKey);
-        document.getElementById('apiKeyStatus').classList.remove('hidden');
-      } else {
-        localStorage.removeItem('gemini_api_key');
-        document.getElementById('apiKeyStatus').classList.add('hidden');
-      }
-      toggleModal(false);
-    }
-
-    // Parse repository string or URL
-    function parseRepoInput(input) {
-      let clean = input.trim().replace(/\/+$/, '');
-      if (clean.includes('github.com/')) {
-        clean = clean.split('github.com/')[1];
-      }
-      const parts = clean.split('/');
-      if (parts.length >= 2) {
-        return { owner: parts[0], repo: parts[1] };
-      }
-      return null;
-    }
-
-    // Fetch repository tree using GitHub REST API
-    async function loadRepository() {
-      const input = document.getElementById('repoInput').value;
-      const parsed = parseRepoInput(input);
-
-      if (!parsed) {
-        alert('Please enter a valid format, e.g., "owner/repo" or a GitHub repository URL.');
-        return;
-      }
-
-      const fetchBtn = document.getElementById('fetchBtn');
-      const treeContainer = document.getElementById('treeContainer');
-      
-      fetchBtn.disabled = true;
-      fetchBtn.innerHTML = `<i class="fa-solid fa-spinner fa-spin"></i> Loading...`;
-      treeContainer.innerHTML = `<div class="text-center py-12 text-slate-500"><i class="fa-solid fa-circle-notch fa-spin text-2xl mb-2"></i><br>Fetching repository tree...</div>`;
-
-      try {
-        // Get branch info
-        const repoRes = await fetch(`https://api.github.com/repos/${parsed.owner}/${parsed.repo}`);
-        if (!repoRes.ok) throw new Error('Repository not found or rate limit exceeded');
-        const repoInfo = await repoRes.json();
-        const defaultBranch = repoInfo.default_branch || 'main';
-
-        // Get file tree recursively
-        const treeRes = await fetch(`https://api.github.com/repos/${parsed.owner}/${parsed.repo}/git/trees/${defaultBranch}?recursive=1`);
-        if (!treeRes.ok) throw new Error('Failed to load file tree');
-        const treeData = await treeRes.json();
-
-        repoData = {
-          owner: parsed.owner,
-          repo: parsed.repo,
-          tree: treeData.tree || []
-        };
-
-        renderTree(repoData.tree);
-        document.getElementById('fileCount').innerText = `${repoData.tree.length} items`;
-        appendChatMessage('system', `Successfully loaded repository: **${parsed.owner}/${parsed.repo}** (${repoData.tree.length} files/folders).`);
-
-      } catch (err) {
-        treeContainer.innerHTML = `<div class="text-red-400 p-4 text-center">Error: ${err.message}</div>`;
-      } finally {
-        fetchBtn.disabled = false;
-        fetchBtn.innerHTML = `<i class="fa-solid fa-download"></i> Load Repository`;
-      }
-    }
-
-    // Render tree file list
-    function renderTree(tree) {
-      const container = document.getElementById('treeContainer');
-      if (!tree || tree.length === 0) {
-        container.innerHTML = `<div class="text-slate-500 text-center py-6">No files found</div>`;
-        return;
-      }
-
-      // Display up to 100 items for performance
-      const items = tree.slice(0, 100).map(item => {
-        const icon = item.type === 'tree' ? 'fa-folder text-amber-400' : 'fa-file-code text-indigo-400';
-        return `
-          <div class="flex items-center gap-2 py-0.5 hover:bg-slate-800/50 rounded px-1 truncate">
-            <i class="fa-solid ${icon} w-4 text-center"></i>
-            <span class="truncate">${item.path}</span>
-          </div>
-        `;
-      }).join('');
-
-      container.innerHTML = items + (tree.length > 100 ? `<div class="text-xs text-slate-500 py-2 italic text-center">+ ${tree.length - 100} more files</div>` : '');
-    }
-
-    // Call Gemini API
-    async function askGemini(prompt) {
-      if (!apiKey) {
-        toggleModal(true);
-        throw new Error('Please enter your Gemini API key first.');
-      }
-
-      const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${apiKey}`;
-      
-      const response = await fetch(url, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          contents: [{ parts: [{ text: prompt }] }]
-        })
-      });
-
-      if (!response.ok) {
-        const errData = await response.json().catch(() => ({}));
-        throw new Error(errData.error?.message || `API Request failed (${response.status})`);
-      }
-
-      const data = await response.json();
-      return data.candidates?.[0]?.content?.parts?.[0]?.text || 'No response generated.';
-    }
-
-    // Handle Quick Action Buttons
-    async function quickAction(type) {
-      if (!repoData.tree || repoData.tree.length === 0) {
-        alert('Please load a repository first.');
-        return;
-      }
-
-      const filePaths = repoData.tree.map(f => f.path).join('\n');
-      let prompt = '';
-
-      if (type === 'readme') {
-        prompt = `Based on the following repository structure for ${repoData.owner}/${repoData.repo}, generate a clear, professional README.md file in markdown format:\n\nFiles:\n${filePaths.slice(0, 4000)}`;
-      } else if (type === 'explain') {
-        prompt = `Analyze the file structure of ${repoData.owner}/${repoData.repo} and explain the high-level architecture, technology stack, and probable design pattern:\n\nFiles:\n${filePaths.slice(0, 4000)}`;
-      }
-
-      appendChatMessage('user', `Generate ${type.toUpperCase()} analysis for ${repoData.owner}/${repoData.repo}`);
-      const loadingId = appendChatMessage('system', `<i class="fa-solid fa-spinner fa-spin"></i> Generating response...`);
-
-      try {
-        const answer = await askGemini(prompt);
-        updateChatMessage(loadingId, answer);
-      } catch (err) {
-        updateChatMessage(loadingId, `**Error:** ${err.message}`);
-      }
-    }
-
-    // Chat handling
-    async function handleChatSubmit(e) {
-      e.preventDefault();
-      const input = document.getElementById('chatInput');
-      const text = input.value.trim();
-      if (!text) return;
-
-      input.value = '';
-      appendChatMessage('user', text);
-
-      const filePaths = repoData.tree ? repoData.tree.map(f => f.path).join('\n') : '';
-      const contextPrompt = `
-Context Repository: ${repoData.owner ? repoData.owner + '/' + repoData.repo : 'None'}
-File Structure Sample:
-${filePaths.slice(0, 3000)}
-
-User Query: ${text}
-`;
-
-      const loadingId = appendChatMessage('system', `<i class="fa-solid fa-spinner fa-spin"></i> Thinking...`);
-
-      try {
-        const reply = await askGemini(contextPrompt);
-        updateChatMessage(loadingId, reply);
-      } catch (err) {
-        updateChatMessage(loadingId, `**Error:** ${err.message}`);
-      }
-    }
-
-    // Chat UI Helpers
-    function appendChatMessage(sender, text) {
-      const history = document.getElementById('chatHistory');
-      const msgId = 'msg-' + Date.now();
-      const isUser = sender === 'user';
-
-      const html = `
-        <div id="${msgId}" class="flex gap-3 ${isUser ? 'bg-indigo-950/30' : 'bg-slate-900/80'} p-3 rounded-lg border ${isUser ? 'border-indigo-800/40' : 'border-slate-800'} text-sm">
-          <div class="w-7 h-7 rounded-full ${isUser ? 'bg-indigo-500/20 text-indigo-300' : 'bg-emerald-500/20 text-emerald-400'} flex items-center justify-center flex-shrink-0">
-            <i class="fa-solid ${isUser ? 'fa-user' : 'fa-robot'} text-xs"></i>
-          </div>
-          <div class="text-slate-200 leading-relaxed overflow-x-auto w-full font-mono text-xs whitespace-pre-wrap">${formatMarkdown(text)}</div>
+    <!-- Contact Form Section -->
+    <section id="contact" class="max-w-6xl mx-auto px-4 py-16 w-full no-print">
+        <div class="max-w-xl mx-auto bg-slate-900 border border-slate-800 rounded-2xl p-8 shadow-2xl">
+            <h2 class="text-2xl font-bold text-white mb-2 text-center">Get in Touch</h2>
+            <p class="text-slate-400 text-sm text-center mb-6">Have a opportunity or question? Send me a message directly!</p>
+            
+            <form onsubmit="handleFormSubmit(event)" class="space-y-4">
+                <div>
+                    <label class="block text-xs font-medium text-slate-300 mb-1">Your Name</label>
+                    <input type="text" required placeholder="John Doe" class="w-full bg-slate-950 border border-slate-800 rounded-lg px-4 py-2.5 text-sm text-slate-200 focus:outline-none focus:border-indigo-500">
+                </div>
+                <div>
+                    <label class="block text-xs font-medium text-slate-300 mb-1">Your Email</label>
+                    <input type="email" required placeholder="john@example.com" class="w-full bg-slate-950 border border-slate-800 rounded-lg px-4 py-2.5 text-sm text-slate-200 focus:outline-none focus:border-indigo-500">
+                </div>
+                <div>
+                    <label class="block text-xs font-medium text-slate-300 mb-1">Message</label>
+                    <textarea rows="4" required placeholder="Hello Allyson..." class="w-full bg-slate-950 border border-slate-800 rounded-lg px-4 py-2.5 text-sm text-slate-200 focus:outline-none focus:border-indigo-500"></textarea>
+                </div>
+                <button type="submit" class="w-full bg-indigo-600 hover:bg-indigo-500 text-white font-medium py-2.5 rounded-lg transition shadow-lg shadow-indigo-600/20">
+                    Send Message
+                </button>
+            </form>
+            <div id="formFeedback" class="hidden mt-4 text-center text-xs text-emerald-400 bg-emerald-500/10 p-2 rounded border border-emerald-500/20">
+                Message sent successfully!
+            </div>
         </div>
-      `;
+    </section>
 
-      history.insertAdjacentHTML('beforeend', html);
-      history.scrollTop = history.scrollHeight;
-      return msgId;
-    }
+    <!-- Footer -->
+    <footer class="border-t border-slate-800 py-6 bg-slate-950 text-slate-500 text-xs text-center no-print">
+        <p>© <span id="year"></span> Allyson Arbelaez. Hosted on GitHub Pages.</p>
+    </footer>
 
-    function updateChatMessage(msgId, text) {
-      const el = document.getElementById(msgId);
-      if (el) {
-        const textContainer = el.querySelector('.text-slate-200');
-        if (textContainer) {
-          textContainer.innerHTML = formatMarkdown(text);
+    <script>
+        document.getElementById('year').innerText = new Date().getFullYear();
+
+        function handleFormSubmit(e) {
+            e.preventDefault();
+            const feedback = document.getElementById('formFeedback');
+            feedback.classList.remove('hidden');
+            e.target.reset();
+            setTimeout(() => {
+                feedback.classList.add('hidden');
+            }, 4000);
         }
-      }
-    }
-
-    function clearChat() {
-      document.getElementById('chatHistory').innerHTML = '';
-    }
-
-    // Lightweight markdown formating (bold, codeblocks)
-    function formatMarkdown(str) {
-      return str
-        .replace(/```([\s\S]*?)```/g, '<pre class="bg-slate-950 p-3 rounded border border-slate-800 overflow-x-auto text-indigo-300 my-2"><code>$1</code></pre>')
-        .replace(/`([^`]+)`/g, '<code class="bg-slate-950 px-1 py-0.5 rounded text-indigo-300">$1</code>')
-        .replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>');
-    }
-  </script>
+    </script>
 </body>
 </html>
